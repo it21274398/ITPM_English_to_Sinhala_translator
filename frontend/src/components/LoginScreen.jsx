@@ -11,7 +11,7 @@ const LoginScreen = () => {
     if (localStorage.getItem("authToken")) {
       setIsLoading(true);
       setTimeout(() => {
-        window.location = "/homepage";
+        window.location = "/home";
         setIsLoading(false);
       }, 5000);
     }
@@ -33,7 +33,7 @@ const LoginScreen = () => {
       console.log(res);
       localStorage.setItem("authToken", res.data.token);
       localStorage.setItem("userData", JSON.stringify(res.data.result));
-      window.location = "/homepage";
+      window.location = "/home";
     } catch (err) {
       if (err.response.status === 404) {
         document.querySelector(".incorectusername").innerHTML =
