@@ -27,7 +27,7 @@ const signup = async (req, res) => {
       { email: result.email, id: result._id },
       SECRET_KEY,
       {
-        expiresIn: "1d",
+        expiresIn: "1m",
       }
     );
     res.status(201).json({ result, token });
