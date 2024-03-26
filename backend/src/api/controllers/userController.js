@@ -1,4 +1,5 @@
 import User from "../models/userModel.js";
+import logger from "../../utils/logger.js";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 const SECRET_KEY = "RECIPEAPI";
@@ -53,7 +54,7 @@ const signin = async (req, res) => {
     const token = jwt.sign(
       { email: existingUser.email, id: existingUser._id },
       SECRET_KEY,
-      { expiresIn: "1h" }
+      { expiresIn: "1d" }
     );
 
     res.status(201).json({ result: existingUser, token });
