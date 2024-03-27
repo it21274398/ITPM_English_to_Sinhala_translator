@@ -5,7 +5,7 @@ import "dotenv/config";
 import { connect } from "./utils/database.connection";
 
 const app = express();
-const PORT = process.env.PORT || "8095";
+const PORT = process.env.PORT || "8096";
 
 app.use(cors());
 app.use(express.json({ limit: "20mb" }));
@@ -17,8 +17,6 @@ app.get("/", (req, res, next) => {
 
 import userRouter from "./api/routes/userRoutes.js";
 app.use("/user", userRouter);
-
-/*----------------------- Chathura END ----------------------- */
 
 app.listen(PORT, () => {
   logger.info(`Server is up and running on ${PORT}`);
