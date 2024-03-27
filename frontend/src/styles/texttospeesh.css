@@ -1,0 +1,14 @@
+.container1 {
+  font-size: 30px;
+  padding-top: 177px;
+  padding-bottom: 277px;
+  margin-top: 50px;
+  text-align: center;
+  border: 0.1px solid #008e7b;
+  background-image: linear-gradient(to right, #0f0c29, #241f4f, #24243e);
+}
+
+.icons {
+  padding: 30px;
+  width: 50px;
+}
