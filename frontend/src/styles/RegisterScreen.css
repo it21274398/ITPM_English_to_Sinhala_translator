@@ -1,5 +1,5 @@
 .container {
-  background: #ffffffc6;
+  background-image: linear-gradient(to right, #0f0c29, #241f4f, #24243e);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,12 +29,11 @@
 }
 .input-boxs {
   border-radius: 5px;
-  background-color: #f1f1f1;
+  background-color: #323232;
   border: 0.5px solid black;
   padding: 12px 20px;
   letter-spacing: 1px;
   margin: 20px 0;
-  width: 91%;
 }
 
 .first-form-column,
@@ -43,13 +42,12 @@
 }
 .register-button {
   border-radius: 5px;
-  border: 1px solid #f87f7f;
-  background-color: #ff6781;
+  border: 1px solid #000000;
+  background-color: #57547a;
   color: #ffffff;
   font-size: 12px;
   font-weight: bold;
   padding: 12px 50px;
-  margin-left: -280px;
   margin-bottom: -50px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -69,11 +67,13 @@
   text-decoration: none;
   font-size: 13px;
   padding: 10px;
-  color: #ff6781;
+  color: #ffffff;
 }
 .register-login-link-lebel {
+  text-align: center;
   font-size: 12px;
-  margin-bottom: 100px;
+  margin-left: 37%;
+  color: #a5a5a5;
 }
 
 .App-header {
@@ -84,5 +84,9 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.password-feedback {
   color: white;
 }

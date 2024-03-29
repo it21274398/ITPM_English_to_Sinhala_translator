@@ -4,18 +4,20 @@
   justify-content: center;
   align-items: center;
   font-family: "Poppins", sans-serif !important;
-  margin-top: 8%;
+  margin-top: 50px;
+  margin-bottom: 50px;
   margin-left: 34%;
   margin-right: 34%;
+  background-image: linear-gradient(to right, #0f0c29, #241f4f, #24243e);
 }
 
 .password-feedback {
-  color: red;
+  color: rgb(163, 151, 255);
 }
 #header-icon {
   margin-left: 80%;
   margin-top: 2%;
-  color: black;
+  color: rgb(21, 26, 99);
 }
 #header-icon:hover {
   transform: scale(1.1);
@@ -41,8 +43,8 @@ span {
 
 .singin-button {
   border-radius: 5px;
-  border: 1px solid #f87f7f;
-  background-color: #ff6781;
+  border: 1px solid #000000;
+  background-color: #57547a;
   color: #ffffff;
   font-size: 12px;
   font-weight: bold;
@@ -60,24 +62,13 @@ span {
   outline: invert;
 }
 
-.loginform {
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  padding: 10px 80px 50px 80px;
-  text-align: center;
-  border-radius: 100px;
-}
-
 .login-input-boxe {
-  background-color: #eee;
+  background-color: #323232;
   border: 0.5px solid black;
-  padding: 12px 15px;
+  padding: 12px 40px;
   margin: 8px 0;
   letter-spacing: 1px;
-  width: 90%;
+
   border-radius: 5px;
 }
 
@@ -100,7 +91,10 @@ span {
 }
 
 .form-name {
-  background-image: linear-gradient(45deg, #dbd21ece, #ff4a68);
+  align-items: center;
+  margin-bottom: 25px;
+  text-align: center;
+  background-image: linear-gradient(to right, #acacac, #7872ad, #c3c3c3);
   background-size: 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -115,15 +109,15 @@ span {
   margin-top: -25px;
   margin-left: -170px;
   margin-bottom: -15px;
-  color: #ff4a68;
+  color: #ffffff;
 }
 
 .incorectusername {
-  color: #333;
+  color: #d1d1d1;
   font-size: 9px;
   margin-top: -15px;
   margin-bottom: 1px 0;
-  color: #ff4a68;
+  color: #ffffff;
 }
 
 .dontaccont1 {
@@ -133,7 +127,8 @@ span {
 }
 
 .login-registerpage-link-lebel {
-  font-size: 10px;
+  color: #757575;
+  font-size: 12px;
   font-family: "Poppins", sans-serif !important ;
 }
 

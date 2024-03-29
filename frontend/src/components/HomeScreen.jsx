@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/translate.css";
 import SinglishTranslate from "./singlishTranslate";
 import { swapHorizontalOutline } from "ionicons/icons";
@@ -12,6 +12,10 @@ function Translate() {
   const [singlishInput, setSinglishInput] = useState(""); // Singlish input
   const [translatedSinglishText, setTranslatedSinglishText] = useState(""); // Singlish translation
   const [inputCharsCount, setInputCharsCount] = useState(0); // Handle character input limit
+
+  const [darkMode, setDarkMode] = useState(
+    localStorage.getItem("darkMode") === "true" || false
+  );
 
   // Singlish Translation
   const handleSinglishInputChange = (event) => {
@@ -82,6 +86,15 @@ function Translate() {
     setInputText(translatedText);
     setTranslatedText(tempInputText);
   };
+
+  // Set dark mode class on body element
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [darkMode]);
 
   return (
     <div className="translator-container">

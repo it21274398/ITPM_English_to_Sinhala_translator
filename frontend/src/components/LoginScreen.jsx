@@ -53,8 +53,8 @@ const LoginScreen = () => {
     <div class="container" id="container">
       <div class="form-container sign-in-container">
         <form className="loginform">
-          <h1 className="form-name">Cook</h1>
-          <h1>Login</h1>
+          <h1 className="form-name">Login</h1>
+
           <input
             type="email"
             placeholder="Email"
@@ -79,7 +79,7 @@ const LoginScreen = () => {
           <br />
 
           <button className="singin-button" onClick={loginHandler}>
-            {isLoading ? "Authenticating..." : "LogIn"}{" "}
+            {isLoading ? "Authenticating" : "LogIn"}{" "}
             {/* Show loading or Login */}
           </button>
 

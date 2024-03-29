@@ -64,8 +64,7 @@ const RegisterScreen = () => {
     <div class="container">
       <div class="form-container sign-in-container">
         <form className="register-form">
-          <h1 className="form-name">Cook</h1>
-          <p className="register-name">Register</p>
+          <h1 className="form-name">Register</h1>
           <div className="column-style">
             <div className="first-form-column">
               <input
