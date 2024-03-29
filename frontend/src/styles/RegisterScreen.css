@@ -90,3 +90,8 @@
 .password-feedback {
   color: white;
 }
+
+.paswwordstrenth {
+  font-size: 10px;
+  color: #ffffff;
+}
