@@ -19,19 +19,19 @@ export default function Layout() {
               <span className="span">Home</span>
             </Link>
 
-            <Link to="/translator" className="Links">
-              <span className="span">Translator</span>
-            </Link>
-
-            <Link to="/contactUs" className="Links">
-              <span className="span">Contact Us</span>
+            <Link to="/History" className="Links">
+              <span className="span"> History</span>
             </Link>
 
             <Link to="/aboutus" className="Links">
               <span className="span">About Us</span>
             </Link>
 
-            <Link to="/profile" className="Links1">
+            <Link to="/Voicetotext" className="Links">
+              <span className="span">Voice To Text</span>
+            </Link>
+
+            <Link to="/user" className="Links1">
               <IonIcon icon={personOutline} className="headericons" />
               <span className="profile-span">My Profile</span>
             </Link>
