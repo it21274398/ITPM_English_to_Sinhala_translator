@@ -23,7 +23,11 @@ const RegisterScreen = () => {
 
   useEffect(() => {
     if (password.length < 8) {
-      setPasswordStrength("Password should be at least 8 characters long");
+      setPasswordStrength(
+        <p className="paswwordstrenth">
+          Password should be at least 8 characters long
+        </p>
+      );
     } else {
       setPasswordStrength("");
     }
@@ -72,6 +76,7 @@ const RegisterScreen = () => {
                 placeholder="First Name"
                 className="input-boxs"
                 onChange={(e) => setFirstName(e.target.value)}
+                required
               />
               <br />
               <input
@@ -79,6 +84,7 @@ const RegisterScreen = () => {
                 placeholder="E-mail"
                 className="input-boxs"
                 onChange={(e) => setEmail(e.target.value)}
+                required
               />
               <br />
               <input
@@ -86,6 +92,7 @@ const RegisterScreen = () => {
                 placeholder="Password"
                 className="input-boxs"
                 onChange={(e) => setPassword(e.target.value)}
+                required
               />
               {passwordStrength && (
                 <p className="password-feedback">{passwordStrength}</p>
@@ -98,6 +105,7 @@ const RegisterScreen = () => {
                 placeholder="Last Name"
                 className="input-boxs"
                 onChange={(e) => setLastName(e.target.value)}
+                required
               />
               <br />
               <input
@@ -105,6 +113,7 @@ const RegisterScreen = () => {
                 placeholder="Phone Number"
                 className="input-boxs"
                 onChange={(e) => setContact(e.target.value)}
+                required
               />
               <br />
               <input
@@ -112,6 +121,7 @@ const RegisterScreen = () => {
                 placeholder="Confirm Password"
                 className="input-boxs"
                 onChange={(e) => setConfirmPassword(e.target.value)}
+                required
               />
               {passwordMatch === false && (
                 <p className="password-feedback">Passwords do not match</p>

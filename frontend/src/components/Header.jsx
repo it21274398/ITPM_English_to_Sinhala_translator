@@ -27,6 +27,10 @@ export default function Layout() {
               <span className="span">About Us</span>
             </Link>
 
+            <Link to="/Voicetotext" className="Links">
+              <span className="span">Voice To Text</span>
+            </Link>
+
             <Link to="/user" className="Links1">
               <IonIcon icon={personOutline} className="headericons" />
               <span className="profile-span">My Profile</span>
