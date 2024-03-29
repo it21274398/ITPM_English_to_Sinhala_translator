@@ -4,8 +4,9 @@ import Header from "./components/Header";
 import LoginScreen from "./components/LoginScreen";
 import Registerscreen from "./components/RegisterScreen";
 import HomeScreen from "./components/HomeScreen";
+import UserProfile from "./components/UserProfile";
 import Footer from "./components/Footer";
-import Aboutus from "./components/AboutUScreen";
+import VoiceToText from "./components/VoiceToText";
 function App() {
   return (
     <div className="App">
@@ -15,7 +16,8 @@ function App() {
           <Route path="/" element={<LoginScreen />} />
           <Route path="/register" element={<Registerscreen />} />
           <Route path="/home" element={<HomeScreen />} />
-          <Route path="/aboutus" element={<Aboutus />} />
+          <Route path="/Voicetotext" element={<VoiceToText />} />
+          <Route path="/user" element={<UserProfile />} />
         </Routes>
         <Footer />
       </BrowserRouter>
