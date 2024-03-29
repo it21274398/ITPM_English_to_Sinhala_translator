@@ -1,0 +1,31 @@
+.title {
+  text-align: center;
+  color: aliceblue;
+  font-size: 30px;
+  font-family: monospace;
+}
+.profile-container {
+  text-align: center;
+  background-image: linear-gradient(to right, #0f0c29, #241f4f, #24243e);
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  padding: 80px;
+}
+
+.userinputs {
+  font-size: 15px;
+  font-family: monospace;
+  color: aliceblue;
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+.userprofileinputs {
+  border: 2px solid rgb(177, 177, 177);
+  box-shadow: 10px 10px 30px #00000093;
+  border-radius: 6px;
+  padding: 5px 60px;
+  background-image: linear-gradient(to right, #313193cc, #544d91c1, #2f2fa5b2);
+}
