@@ -5,7 +5,7 @@ import "dotenv/config";
 import { connect } from "./utils/database.connection";
 
 const app = express();
-const PORT = process.env.PORT || "8096";
+const PORT = process.env.PORT || "8097";
 
 app.use(cors());
 app.use(express.json({ limit: "20mb" }));

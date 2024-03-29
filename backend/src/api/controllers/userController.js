@@ -59,7 +59,7 @@ const signin = async (req, res) => {
 
     res.status(201).json({ result: existingUser, token });
     /* return user data */
-    //res.status(200).json({ result });
+    res.status(200).json({ result });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: "Something went wrong" });
