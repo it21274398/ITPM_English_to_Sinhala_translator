@@ -7,6 +7,8 @@ import HomeScreen from "./components/HomeScreen";
 import UserProfile from "./components/UserProfile";
 import Footer from "./components/Footer";
 import VoiceToText from "./components/VoiceToText";
+import CheckerDemo from "./components/GrammerCheck/CheckerDemo";
+
 function App() {
   return (
     <div className="App">
@@ -18,6 +20,7 @@ function App() {
           <Route path="/home" element={<HomeScreen />} />
           <Route path="/Voicetotext" element={<VoiceToText />} />
           <Route path="/user" element={<UserProfile />} />
+          <Route path="/grammerCheck" element={<CheckerDemo />} />
         </Routes>
         <Footer />
       </BrowserRouter>
