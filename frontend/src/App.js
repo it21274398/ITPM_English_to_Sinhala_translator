@@ -6,6 +6,7 @@ import Registerscreen from "./components/RegisterScreen";
 import HomeScreen from "./components/HomeScreen";
 import UserProfile from "./components/UserProfile";
 import AboutUs from "./components/AboutUScreen";
+import Hitory from "./components/HitoryScreen";
 import Footer from "./components/Footer";
 import VoiceToText from "./components/VoiceToText";
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/Voicetotext" element={<VoiceToText />} />
           <Route path="/user" element={<UserProfile />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/history" element={<Hitory />} />
         </Routes>
         <Footer />
       </BrowserRouter>
