@@ -1,12 +1,12 @@
 .title {
   text-align: center;
-  color: aliceblue;
+  color: rgb(0, 0, 0);
   font-size: 30px;
   font-family: monospace;
 }
 .profile-container {
   text-align: center;
-  background-image: linear-gradient(to right, #0f0c29, #241f4f, #24243e);
+  /* background-image: linear-gradient(to right, #d7d6d6, #ffffff, #dddddd); */
   margin-left: 0px;
   margin-right: 0px;
   margin-bottom: 50px;
@@ -17,15 +17,15 @@
 .userinputs {
   font-size: 15px;
   font-family: monospace;
-  color: aliceblue;
+  color: rgb(0, 0, 0);
   padding-top: 40px;
   padding-bottom: 10px;
 }
 
 .userprofileinputs {
-  border: 2px solid rgb(177, 177, 177);
-  box-shadow: 10px 10px 30px #00000093;
+  border: 2px solid rgb(93, 93, 93);
+  box-shadow: 5px 5px 20px #00000093;
   border-radius: 6px;
   padding: 5px 60px;
-  background-image: linear-gradient(to right, #313193cc, #544d91c1, #2f2fa5b2);
+  background-image: linear-gradient(to right, #d2d2d8cc, #c3beeec1, #8d8da4b2);
 }
