@@ -5,9 +5,10 @@ import LoginScreen from "./components/LoginScreen";
 import Registerscreen from "./components/RegisterScreen";
 import HomeScreen from "./components/HomeScreen";
 import UserProfile from "./components/UserProfile";
+import AboutUs from "./components/AboutUScreen";
 import Footer from "./components/Footer";
 import VoiceToText from "./components/VoiceToText";
-import HistoryScreen from "./components/HistoryScreen"
+import HistoryScreen from "./components/HistoryScreen";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
           <Route path="/Voicetotext" element={<VoiceToText />} />
           <Route path="/user" element={<UserProfile />} />
           <Route path="/History" element={<HistoryScreen />} />
-
+          <Route path="/aboutus" element={<AboutUs />} />
         </Routes>
         <Footer />
       </BrowserRouter>

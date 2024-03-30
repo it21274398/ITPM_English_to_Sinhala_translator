@@ -12,3 +12,23 @@
   padding: 30px;
   width: 50px;
 }
+
+.Heder3 {
+  border-radius: 5px;
+  margin: 0px 400px;
+  padding-top: 20px;
+  padding-bottom: 100px;
+  border: 1px solid rgba(0, 134, 146, 0.555);
+  color: rgb(184, 184, 184);
+}
+
+.icons {
+  padding: 50px-;
+
+  border-radius: 1000px;
+  color: rgb(124, 124, 124);
+}
+
+.paregraph {
+  margin-right: 500px;
+}
