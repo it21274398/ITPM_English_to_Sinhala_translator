@@ -5,8 +5,10 @@ import LoginScreen from "./components/LoginScreen";
 import Registerscreen from "./components/RegisterScreen";
 import HomeScreen from "./components/HomeScreen";
 import UserProfile from "./components/UserProfile";
+import AboutUs from "./components/AboutUScreen";
 import Footer from "./components/Footer";
 import VoiceToText from "./components/VoiceToText";
+
 function App() {
   return (
     <div className="App">
@@ -18,6 +20,7 @@ function App() {
           <Route path="/home" element={<HomeScreen />} />
           <Route path="/Voicetotext" element={<VoiceToText />} />
           <Route path="/user" element={<UserProfile />} />
+          <Route path="/aboutus" element={<AboutUs />} />
         </Routes>
         <Footer />
       </BrowserRouter>
