@@ -1,21 +1,47 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import LoginScreen from "./components/LoginScreen";
 import Registerscreen from "./components/RegisterScreen";
 import HomeScreen from "./components/HomeScreen";
 import UserProfile from "./components/UserProfile";
 import AboutUs from "./components/AboutUScreen";
 import Hitory from "./components/HitoryScreen";
-import Footer from "./components/Footer";
 import VoiceToText from "./components/VoiceToText";
 import HistoryScreen from "./components/HistoryScreen";
 
-function App() {
+// Layout component to conditionally render header and footer
+function Layout({ children }) {
+  const location = useLocation();
+
+  // Define an array of paths where header and footer should be shown
+  const showHeaderFooterPaths = [
+    "/home",
+    "/Voicetotext",
+    "/user",
+    "/History",
+    "/aboutus",
+    "/history",
+  ];
+
+  // Check if the current path is included in the array
+  const showHeaderFooter = showHeaderFooterPaths.includes(location.pathname);
+
+  // Render header and footer only if the current path matches the conditions
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header />
+      {showHeaderFooter && <Header />}
+      {children}
+      {showHeaderFooter && <Footer />}
+    </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Layout>
         <Routes>
           <Route path="/" element={<LoginScreen />} />
           <Route path="/register" element={<Registerscreen />} />
@@ -26,9 +52,8 @@ function App() {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/history" element={<Hitory />} />
         </Routes>
-        <Footer />
-      </BrowserRouter>
-    </div>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
