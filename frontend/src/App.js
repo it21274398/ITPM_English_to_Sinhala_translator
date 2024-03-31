@@ -7,7 +7,7 @@ import Registerscreen from "./components/RegisterScreen";
 import HomeScreen from "./components/HomeScreen";
 import UserProfile from "./components/UserProfile";
 import AboutUs from "./components/AboutUScreen";
-import Hitory from "./components/HitoryScreen";
+
 import VoiceToText from "./components/VoiceToText";
 import HistoryScreen from "./components/HistoryScreen";
 import GrmmerChecker from "./components/GrammerCheck/CheckerDemo";
@@ -52,7 +52,6 @@ function App() {
           <Route path="/user" element={<UserProfile />} />
           <Route path="/History" element={<HistoryScreen />} />
           <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/history" element={<Hitory />} />
           <Route path="/grammercheck" element={<GrmmerChecker />} />
         </Routes>
       </Layout>
