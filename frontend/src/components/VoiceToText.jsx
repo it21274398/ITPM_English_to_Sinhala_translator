@@ -25,7 +25,9 @@ const SpeechToTextTranslator = () => {
       </button>
 
       <div>
-        <h3>Sinhala Text : {sinhalaText}</h3>
+        <h3 className="Heder3">
+          <p className="paregraph">Sinhala Text :</p> <p>{sinhalaText}</p>
+        </h3>
       </div>
     </div>
   );

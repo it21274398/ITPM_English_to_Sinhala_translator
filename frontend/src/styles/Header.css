@@ -1,5 +1,5 @@
 .Links {
-  margin: 0 35px;
+  margin: 0 25px;
 }
 
 .Links1 {
@@ -14,7 +14,7 @@
   display: flex;
   flex-wrap: nowrap;
   border: 0.1px solid #008e7b86;
-  background-image: linear-gradient(to right, #16222a, #3a6073);
+  background-image: linear-gradient(to right, #325165, #5f99b7);
   text-decoration: double;
   justify-content: center;
   padding: 35px;
@@ -24,22 +24,22 @@
 
 .span {
   font-family: monospace;
-  text-shadow: 9px 9px 8px rgba(0, 0, 0, 0.421);
+  text-shadow: 9px 9px 8px rgba(0, 0, 0, 0.668);
   font-size: 15px;
   transition: color 0.15s ease;
 }
 
 .span:hover {
   text-shadow: 9px 9px 8px rgb(0, 0, 0); /* Add shadow effect */
-  color: rgb(97, 97, 97); /* Change the color on hover */
+  color: rgb(0, 0, 0); /* Change the color on hover */
 }
 
 .logo {
   height: 80px;
   width: 80px;
   border-radius: 50px;
-  border: 3px solid#008e7b;
-  margin-left: -90px;
+  border: 2px solid#008e7b;
+  margin-left: -60px;
   margin-bottom: -50px;
 }
 
@@ -66,5 +66,5 @@
   height: 20px;
   margin-right: 10px;
   margin-bottom: -5px;
-  color: #008e7bb8;
+  color: #000000b8;
 }

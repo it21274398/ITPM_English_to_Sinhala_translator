@@ -4,15 +4,15 @@
   justify-content: center;
   align-items: center;
   font-family: "Poppins", sans-serif !important;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 7%;
+  margin-bottom: 7%;
   margin-left: 34%;
   margin-right: 34%;
-  background-image: linear-gradient(to right, #0f0c29, #241f4f, #24243e);
+  background-image: linear-gradient(to right, #dcdcdc, #fefefe, #dcdcdc);
 }
 
 .password-feedback {
-  color: rgb(163, 151, 255);
+  color: rgb(79, 75, 107);
 }
 #header-icon {
   margin-left: 80%;
@@ -65,12 +65,12 @@ span {
 }
 
 .login-input-boxe {
-  background-color: #323232;
+  background-color: #dbdbdb;
   border: 0.5px solid black;
   padding: 10px 40px;
   margin: 8px 0;
   letter-spacing: 1px;
-
+  color: rgb(78, 78, 78);
   border-radius: 5px;
 }
 
@@ -96,7 +96,7 @@ span {
   align-items: center;
   margin-bottom: 25px;
   text-align: center;
-  background-image: linear-gradient(to right, #acacac, #7872ad, #c3c3c3);
+  background-image: linear-gradient(to right, #515151, #7872ad, #515151);
   background-size: 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -111,15 +111,14 @@ span {
   margin-top: -25px;
   margin-left: -170px;
   margin-bottom: -15px;
-  color: #ffffff;
+  color: #161616;
 }
 
 .incorectusername {
-  color: #d1d1d1;
-  font-size: 9px;
-  margin-top: -15px;
+  color: #070707;
+  font-size: 12px;
+  margin-top: -8px;
   margin-bottom: 1px 0;
-  color: #ffffff;
 }
 
 .dontaccont1 {
