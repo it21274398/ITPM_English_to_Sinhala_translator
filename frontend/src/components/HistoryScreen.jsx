@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import "../styles/History.css";
 
 const TranslationHistory = () => {
   const [translationHistory, setTranslationHistory] = useState([]);
@@ -8,12 +7,10 @@ const TranslationHistory = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    //----------------------------------------------Fetch function-----------------------------------------------------
     const fetchTranslationHistory = async () => {
       try {
-        // Make a request to your backend API to fetch the user's translation history
         const response = await axios.get("/api/translation/history");
-
-        // Assuming the response data is an array of translation objects
         setTranslationHistory(response.data);
         setLoading(false);
       } catch (error) {
@@ -24,6 +21,18 @@ const TranslationHistory = () => {
 
     fetchTranslationHistory();
   }, []);
+
+  //----------------------------------------------delete function-----------------------------------------------------
+  const handleDeleteTranslation = async (id) => {
+    try {
+      await axios.delete(`/api/translation/history/${id}`);
+      setTranslationHistory((prevHistory) =>
+        prevHistory.filter((translation) => translation._id !== id)
+      );
+    } catch (error) {
+      setError(error.message);
+    }
+  };
 
   return (
     <div className="container">
@@ -40,7 +49,9 @@ const TranslationHistory = () => {
               <div>
                 <strong>Translated Text:</strong> {translation.translatedText}
               </div>
-              {/* Add more details as needed */}
+              <button onClick={() => handleDeleteTranslation(translation._id)}>
+                Delete
+              </button>
             </li>
           ))}
         </ul>
