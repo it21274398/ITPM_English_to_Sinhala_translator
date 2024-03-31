@@ -2,17 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Sinhala&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala&display=swap");
 
-:root {
-  --primary-color: rgb(74 222 128);
-  --bg-color: #ffffff;
-  --light-bg-color: #ffffff;
-  --text-color: #f0f0f0;
-  --light-text-color: #cdccd1;
-  --primary-text-color: #ffffff;
-  --border-color: #ccc;
-  --logo-text-color: #757575;
-}
-
 .highlight {
   background-color: yellow; /* Highlighted background color */
   color: red; /* Text color for highlighted words */

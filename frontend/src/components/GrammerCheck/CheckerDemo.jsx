@@ -132,6 +132,8 @@ function CheckerDemo() {
 
   return (
     <div className={Styles.gcContainer}>
+      <br />
+      <br />
       <div className={Styles.sinInputBox}>
         <textarea
           rows="5"
