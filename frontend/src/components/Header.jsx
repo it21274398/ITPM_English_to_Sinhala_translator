@@ -31,7 +31,7 @@ export default function Layout() {
               <span className="span">Voice To Text</span>
             </Link>
 
-            <Link to="/grammerCheck" className="Links">
+            <Link to="/grammercheck" className="Links">
               <span className="span">Grammer Checker</span>
             </Link>
 
