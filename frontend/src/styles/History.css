@@ -1,0 +1,13 @@
+.form-name {
+  align-items: center;
+  margin-bottom: 25px;
+  text-align: center;
+  background-image: linear-gradient(to right, #acacac, #7872ad, #c3c3c3);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  font-size: 40px;
+}

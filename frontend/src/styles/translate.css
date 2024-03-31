@@ -4,7 +4,7 @@
   --primary-color: rgb(0, 92, 93);
   --bg-color: #008e7b;
   --light-bg-color: #ffffff;
-  --text-color: #ffffff;
+  --text-color: #000000;
   --light-text-color: #ffffff;
   --primary-text-color: #ffffff;
   --border-color: #008e7b;
@@ -15,7 +15,7 @@
   padding: 50px;
   height: 700px;
   color: var(--text-color);
-  background-image: linear-gradient(to right, #0f0c29, #241f4f, #24243e);
+  /* background-color: rgb(203, 203, 203); */
 }
 
 .translator-container {
