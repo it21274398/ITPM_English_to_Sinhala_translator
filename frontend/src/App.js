@@ -10,6 +10,7 @@ import AboutUs from "./components/AboutUScreen";
 import Hitory from "./components/HitoryScreen";
 import VoiceToText from "./components/VoiceToText";
 import HistoryScreen from "./components/HistoryScreen";
+import GrmmerChecker from "./components/GrammerCheck/CheckerDemo";
 
 // Layout component to conditionally render header and footer
 function Layout({ children }) {
@@ -23,6 +24,7 @@ function Layout({ children }) {
     "/History",
     "/aboutus",
     "/history",
+    "/grammercheck",
   ];
 
   // Check if the current path is included in the array
@@ -51,6 +53,7 @@ function App() {
           <Route path="/History" element={<HistoryScreen />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/history" element={<Hitory />} />
+          <Route path="/grammercheck" element={<GrmmerChecker />} />
         </Routes>
       </Layout>
     </BrowserRouter>
