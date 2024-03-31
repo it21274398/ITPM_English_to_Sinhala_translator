@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors"; //cross-origin resource sharing : access control
 import logger from "./utils/logger"; //UTILS
 import "dotenv/config";
+
 import { connect } from "./utils/database.connection";
 
 const app = express();
@@ -15,9 +16,11 @@ app.get("/", (req, res, next) => {
   next();
 });
 
-import userRouter from "./api/routes/userRoutes.js";
-app.use("/user", userRouter);
+import translationHistoryRoutes from "./api/routes/translationHistoryRoutes";
+import userRouter from "./api/routes/userRoutes";
 
+app.use("/user", userRouter);
+app.use("/api", translationHistoryRoutes);
 app.listen(PORT, () => {
   logger.info(`Server is up and running on ${PORT}`);
   connect();
