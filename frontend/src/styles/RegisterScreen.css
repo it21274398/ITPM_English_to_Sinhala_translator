@@ -1,11 +1,11 @@
 .container {
-  background-image: linear-gradient(to right, #0f0c29, #241f4f, #24243e);
+  background-image: linear-gradient(to right, #dcdcdc, #fefefe, #dcdcdc);
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Montserrat", sans-serif;
-  margin-top: -8%;
-  margin-top: 8%;
+  margin-top: 0.5%;
+
   margin-left: 25%;
   margin-right: 25%;
 }
@@ -23,15 +23,15 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 20px 80px 50px 80px;
+  padding: 0px 80px 50px 80px;
   text-align: center;
   border-radius: 100px;
 }
 .input-boxs {
-  color: rgb(215, 215, 215);
+  color: rgb(0, 0, 0);
   border-radius: 5px;
-  background-color: #323232;
-  border: 0.5px solid black;
+  background-color: #dbdbdb;
+  border: 0.5px solid rgb(92, 91, 91);
   padding: 12px 20px;
   letter-spacing: 1px;
   margin: 20px 0;
@@ -61,20 +61,20 @@
 
 .register-button:focus {
   outline: invert;
-  color: #5e5e5e;
+  color: #7e7e7e;
 }
 
 .Login-page-link {
   text-decoration: none;
-  font-size: 13px;
+  font-size: 14px;
   padding: 10px;
-  color: #ffffff;
+  color: #000000;
 }
 .register-login-link-lebel {
   text-align: center;
   font-size: 12px;
   margin-left: 37%;
-  color: #a5a5a5;
+  color: #000000;
 }
 
 .App-header {
@@ -85,14 +85,14 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .password-feedback {
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .paswwordstrenth {
   font-size: 10px;
-  color: #ffffff;
+  color: #000000;
 }

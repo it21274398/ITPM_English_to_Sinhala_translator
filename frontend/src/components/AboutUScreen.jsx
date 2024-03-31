@@ -4,7 +4,7 @@ import Image from "../Images/dictionary.jpg";
 
 export default function AboutUs() {
   return (
-    <div class="container">
+    <div class="container" id="aboutuscontainer">
       <div class="">
         <h1 className="aboutus-title">About Us</h1>
         <div class="image-div">

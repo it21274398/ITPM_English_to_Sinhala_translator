@@ -31,6 +31,10 @@ export default function Layout() {
               <span className="span">Voice To Text</span>
             </Link>
 
+            <Link to="/grammercheck" className="Links">
+              <span className="span">Grammer Checker</span>
+            </Link>
+
             <Link to="/user" className="Links1">
               <IonIcon icon={personOutline} className="headericons" />
               <span className="profile-span">My Profile</span>

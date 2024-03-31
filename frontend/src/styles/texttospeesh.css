@@ -5,7 +5,7 @@
   margin-top: 50px;
   text-align: center;
 
-  background-image: linear-gradient(to right, #0f0c29, #241f4f, #24243e);
+  background-image: linear-gradient(to right, #c1c1c1, #fefefe, #c1c1c1);
 }
 
 .icons {
@@ -19,16 +19,13 @@
   padding-top: 20px;
   padding-bottom: 100px;
   border: 1px solid rgba(0, 134, 146, 0.555);
-  color: rgb(184, 184, 184);
+  color: rgb(52, 52, 52);
 }
 
 .icons {
-  padding: 50px-;
-
-  border-radius: 1000px;
-  color: rgb(124, 124, 124);
+  color: rgb(0, 0, 0);
 }
 
 .paregraph {
-  margin-right: 500px;
+  margin-right: 00px;
 }
