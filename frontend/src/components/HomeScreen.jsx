@@ -3,6 +3,7 @@ import "../styles/translate.css";
 import SinglishTranslate from "./singlishTranslate";
 import { swapHorizontalOutline } from "ionicons/icons";
 import { IonIcon } from "@ionic/react";
+import axios from "axios";
 
 function Translate() {
   const [inputLang, setInputLang] = useState("en");
@@ -82,6 +83,31 @@ function Translate() {
     setInputText(translatedText);
     setTranslatedText(tempInputText);
   };
+
+  //-------------------------------------------------History post-------------------------------------------------------
+  const handleTranslationHistoryPost = () => {
+    if (inputText && translatedText) {
+      // Make a POST request to save translation history
+      axios
+        .post("/api/translation/history", {
+          originalText: inputText,
+          translatedText: translatedText,
+        })
+        .then((response) => {
+          console.log("Translation history saved:", response.data);
+          // Optionally, you can update the translation history state here if needed
+        })
+        .catch((error) => {
+          console.error("Error saving translation history:", error);
+        });
+    } else {
+      console.error(
+        "Both input text and translated text are required to save translation history."
+      );
+    }
+  };
+
+  //-------------------------------------------------------------------------------------------------------------------
 
   return (
     <div className="translator-container">
