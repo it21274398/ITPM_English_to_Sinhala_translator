@@ -7,7 +7,6 @@ import Registerscreen from "./components/RegisterScreen";
 import HomeScreen from "./components/HomeScreen";
 import UserProfile from "./components/UserProfile";
 import AboutUs from "./components/AboutUScreen";
-//sdfghjkl;
 import Hitory from "./components/HitoryScreen";
 import VoiceToText from "./components/VoiceToText";
 import HistoryScreen from "./components/HistoryScreen";
