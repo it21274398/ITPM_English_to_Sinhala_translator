@@ -4,7 +4,7 @@ import { IonIcon } from "@ionic/react";
 import { personOutline, logOutOutline } from "ionicons/icons";
 import logo from "../Images/translaterlogo.jpg";
 import "../styles/Header.css";
-
+//----------------------------------------------------------
 export default function Layout() {
   return (
     <div className="header">
