@@ -4,7 +4,7 @@ import SinglishTranslate from "./singlishTranslate";
 import { swapHorizontalOutline } from "ionicons/icons";
 import { IonIcon } from "@ionic/react";
 import axios from "axios";
-
+//--------------------------------------------
 function Translate() {
   const [inputLang, setInputLang] = useState("en");
   const [outputLang, setOutputLang] = useState("si");
