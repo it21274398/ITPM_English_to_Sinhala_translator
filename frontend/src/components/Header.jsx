@@ -2,7 +2,7 @@ import React from "react";
 import { Outlet, Link } from "react-router-dom";
 import { IonIcon } from "@ionic/react";
 import { personOutline, logOutOutline } from "ionicons/icons";
-import logo from "../Images/translaterlogo.jpg";
+import logo from "../Images/logo1.png";
 import "../styles/Header.css";
 //----------------------------------------------------------
 export default function Layout() {

@@ -23,9 +23,9 @@
 }
 
 .userprofileinputs {
-  border: 2px solid rgb(93, 93, 93);
-  box-shadow: 5px 5px 20px #00000093;
+  border: 1px solid rgb(93, 93, 93);
+  box-shadow: 5px 5px 10px #0000006e;
   border-radius: 6px;
   padding: 5px 60px;
-  background-image: linear-gradient(to right, #d2d2d8cc, #c3beeec1, #8d8da4b2);
+  background-color:  rgba(148, 148, 148, 0.449);;
 }

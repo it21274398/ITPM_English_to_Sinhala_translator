@@ -1,25 +1,31 @@
 .container1 {
   font-size: 30px;
-  padding-top: 177px;
-  padding-bottom: 277px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   margin-top: 50px;
+  margin-bottom: -50px;
   text-align: center;
-
-  background-image: linear-gradient(to right, #c1c1c1, #fefefe, #c1c1c1);
+  background-color: white;
 }
 
 .icons {
-  padding: 30px;
+  margin-top: -100px;
+  padding: 20px;
   width: 50px;
 }
 
-.Heder3 {
-  border-radius: 5px;
+.Heder4,
+.Heder5 {
+  border-radius: 20px;
   margin: 0px 400px;
   padding-top: 20px;
   padding-bottom: 100px;
-  border: 1px solid rgba(0, 134, 146, 0.555);
+  border: 1px solid #008e7b;
   color: rgb(52, 52, 52);
+}
+
+.Heder5 {
+  margin-top: 10px;
 }
 
 .icons {
@@ -27,5 +33,6 @@
 }
 
 .paregraph {
-  margin-right: 00px;
+  color: #8f8f8f;
+  font-size: 20px;
 }

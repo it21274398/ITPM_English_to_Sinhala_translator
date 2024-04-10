@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../styles/History.css";
 
 const TranslationHistory = () => {
   const [translationHistory, setTranslationHistory] = useState([]);
@@ -35,10 +36,10 @@ const TranslationHistory = () => {
   };
 
   return (
-    <div className="container">
-      <h2 className="form-name">Translation History</h2>
+    <div className="container1" id="histry-div">
+      <h2 className="form-name-histor">Translation History</h2>
       {translationHistory && translationHistory.length === 0 ? (
-        <p>No translation history available.</p>
+        <p className="histry-error">No translation history available.</p>
       ) : (
         <ul>
           {translationHistory.map((translation, index) => (
