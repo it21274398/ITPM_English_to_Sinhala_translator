@@ -1,13 +1,26 @@
-.form-name {
-  align-items: center;
-  margin-bottom: 25px;
+.form-name-histor {
+  margin-top: -50px;
+  margin-bottom: 100px;
   text-align: center;
-  background-image: linear-gradient(to right, #acacac, #7872ad, #c3c3c3);
-  background-size: 100%;
+  background-image: linear-gradient(to right, #515151, #7872ad, #515151);
   -webkit-background-clip: text;
   background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
   font-size: 40px;
+}
+
+#histry-div {
+  border-radius: 5px;
+  border: 1px solid #008e7b;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.219);
+}
+
+.histry-error {
+  padding-bottom: 50px;
 }

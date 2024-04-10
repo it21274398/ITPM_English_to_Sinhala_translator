@@ -37,10 +37,11 @@
 .logo {
   height: 80px;
   width: 80px;
-  border-radius: 50px;
-  border: 2px solid#008e7b;
+  border-radius: 20px;
+  border: 2px solid #008e7b;
   margin-left: -60px;
   margin-bottom: -50px;
+  filter: brightness(0.8);
 }
 
 .profile-span,
