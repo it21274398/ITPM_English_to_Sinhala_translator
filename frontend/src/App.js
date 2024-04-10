@@ -9,7 +9,6 @@ import UserProfile from "./components/UserProfile";
 import AboutUs from "./components/AboutUScreen";
 import Hitory from "./components/HitoryScreen";
 import VoiceToText from "./components/VoiceToText";
-import HistoryScreen from "./components/HistoryScreen";
 import GrmmerChecker from "./components/GrammerCheck/CheckerDemo";
 
 // Layout component to conditionally render header and footer
@@ -23,7 +22,6 @@ function Layout({ children }) {
     "/user",
     "/History",
     "/aboutus",
-    "/history",
     "/grammercheck",
   ];
 
@@ -50,7 +48,6 @@ function App() {
           <Route path="/home" element={<HomeScreen />} />
           <Route path="/Voicetotext" element={<VoiceToText />} />
           <Route path="/user" element={<UserProfile />} />
-          <Route path="/History" element={<HistoryScreen />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/history" element={<Hitory />} />
           <Route path="/grammercheck" element={<GrmmerChecker />} />
