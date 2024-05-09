@@ -27,7 +27,7 @@
 }
 
 .translation-item button {
-  background-color: #ff6f61;
+  background-color: #fb3826;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -51,4 +51,11 @@
   color: #ff6f61;
   font-size: 18px;
   margin-top: 20px;
+}
+
+.translate-name-histor {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #000000;
 }

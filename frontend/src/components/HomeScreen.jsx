@@ -4,6 +4,7 @@ import SinglishTranslate from "./singlishTranslate";
 import { swapHorizontalOutline } from "ionicons/icons";
 import { IonIcon } from "@ionic/react";
 import axios from "axios";
+import {toast} from "react-toastify";
 //--------------------------------------------
 function Translate() {
   const [inputLang, setInputLang] = useState("en");
@@ -95,10 +96,12 @@ function Translate() {
         })
         .then((response) => {
           console.log("Translation history saved:", response.data);
+          toast.success("Translation history saved successfully!");
           // Optionally, you can update the translation history state here if needed
         })
         .catch((error) => {
           console.error("Error saving translation history:", error);
+          toast.error("Error saving translation history");
         });
     } else {
       console.error(
@@ -106,6 +109,7 @@ function Translate() {
       );
     }
   };
+  
 
   //-------------------------------------------------------------------------------------------------------------------
 
@@ -189,9 +193,11 @@ function Translate() {
         </div>
       </div>
 
+      <div className="save-translation-item">
       <button onClick={handleTranslationHistoryPost}> 
         Save Translate 
       </button>
+      </div>
       
     </div>
 

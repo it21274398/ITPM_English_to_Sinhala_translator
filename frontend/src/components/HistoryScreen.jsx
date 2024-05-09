@@ -35,18 +35,18 @@ const TranslationHistory = () => {
 
   return (
     <div className="container1" id="histry-div">
-      <h2 className="form-name-histor">Translation History</h2>
+      <h2 className="form-name-histor"><strong>Translation History</strong></h2>
       {translationHistory && translationHistory.length === 0 ? (
         <p className="histry-error">No translation history available.</p>
       ) : (
         <ul>
           {translationHistory.map((translation, index) => (
             <li className="translation-item" key={index}>
-              <div>
-                <strong>Original Text:</strong> {translation.originalText}
+              <div className="translate-name-histor">
+                <strong>Original Text :</strong> {translation.originalText}
               </div>
-              <div>
-                <strong>Translated Text:</strong> {translation.translatedText}
+              <div className="translate-name-histor">
+                <strong>Translated Text :</strong> {translation.translatedText}
               </div>
               <button onClick={() => handleDeleteTranslation(translation._id)}>
                 Delete
