@@ -10,7 +10,6 @@ function CheckerDemo() {
   const [singlishText, setSinglishText] = useState(""); // Singlish text
   const [inputText, setInputText] = useState("");
   const [outputText, setOutputText] = useState("");
-  const [error, setError] = useState("");
 
   // Singlish conversion
   const handleSinglishInputChange = (event) => {
@@ -25,19 +24,107 @@ function CheckerDemo() {
   };
 
   const handleGrammarCheck = () => {
-    if (!inputText.trim() && !singlishText.trim()) {
-      setError("Please enter a Sinhala paragraph or Singlish text!");
+    if (!inputText.trim()) {
+      // Don't proceed if there's no input text
+      alert("Please enter a input text!");
       setOutputText("");
       return;
-    } else {
-      setError(""); // Clear any previous errors
     }
 
     const sentences = inputText.split(/[.?,]/);
     let correctedParagraph = "";
 
     sentences.forEach((sentence, index, array) => {
-      // Your existing logic for grammar check...
+      const words = sentence.trim().split(" ");
+      const nounWords = [];
+      const verbWords = [];
+
+      words.forEach((word) => {
+        // Check if the word is in nouns.js and add it to nounWords
+        if (
+          nouns.find(
+            (noun) => noun.form.singular === word || noun.form.plural === word
+          )
+        ) {
+          nounWords.push(word);
+        }
+
+        // Check if the word is in spokenVerbs.js and add it to verbWords
+        if (
+          spokenVerbs.find(
+            (verb) => verb.nonPast === word || verb.past === word
+          )
+        ) {
+          verbWords.push(word);
+        }
+      });
+
+      // Initialize with the original sentence
+      let correctedSentence = sentence;
+
+      if (nounWords.length > 0 && verbWords.length > 0) {
+        const mostRecentNoun = nounWords[nounWords.length - 1];
+        const mostRecentVerb = verbWords[verbWords.length - 1];
+
+        if (words.indexOf(mostRecentNoun) < words.indexOf(mostRecentVerb)) {
+          const nounRecord = nouns.find(
+            (noun) =>
+              noun.form.singular === mostRecentNoun ||
+              noun.form.plural === mostRecentNoun
+          );
+          const verbRecord = spokenVerbs.find(
+            (verb) =>
+              verb.nonPast === mostRecentVerb || verb.past === mostRecentVerb
+          );
+
+          if (nounRecord && verbRecord) {
+            const { perspective, form } = nounRecord;
+            const nounPerspective = perspective;
+            const nounForm =
+              form.singular === mostRecentNoun ? "singular" : "plural";
+
+            const verbBase = verbRecord.base;
+
+            const tense =
+              verbRecord.nonPast === mostRecentVerb ? "nonPast" : "past";
+
+            let newVerb = "";
+            if (nounPerspective === "firstPerson") {
+              const verbTable = firstPersonVerbs.find(
+                (verb) => verb.base === verbBase
+              );
+              if (tense === "nonPast") {
+                newVerb = verbTable.nonPast[nounForm];
+              } else if (tense === "past") {
+                newVerb = verbTable.past[nounForm];
+              }
+            } else if (nounPerspective === "secondPerson") {
+              const verbTable = secondPersonVerbs.find(
+                (verb) => verb.base === verbBase
+              );
+              if (tense === "nonPast") {
+                newVerb = verbTable.nonPast[nounForm];
+              } else if (tense === "past") {
+                newVerb = verbTable.past[nounForm];
+              }
+            }
+
+            // Replace the verbWord with the corrected verb form
+            correctedSentence = sentence.replace(mostRecentVerb, newVerb);
+
+            // Replace "ද" with "?" in the last sentence
+            if (correctedSentence.endsWith("ද")) {
+              correctedParagraph += correctedSentence + "?";
+            }
+          }
+        }
+      }
+      if (!correctedSentence.endsWith("ද")) {
+        correctedParagraph +=
+          index === array.length - 1
+            ? correctedSentence
+            : correctedSentence + ".";
+      }
     });
 
     setOutputText(correctedParagraph);
@@ -67,7 +154,6 @@ function CheckerDemo() {
       <button className={Styles.checkBtn} onClick={handleGrammarCheck}>
         Check Grammar
       </button>
-      {error && <div className={Styles.error}>{error}</div>}
       <div className={Styles.outputBox}>
         <textarea
           rows="5"
