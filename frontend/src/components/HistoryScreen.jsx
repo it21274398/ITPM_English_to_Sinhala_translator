@@ -8,10 +8,9 @@ const TranslationHistory = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    //----------------------------------------------Fetch function-----------------------------------------------------
     const fetchTranslationHistory = async () => {
       try {
-        const response = await axios.get("/api/translation/history");
+        const response = await axios.get("http://localhost:8080/api/translation/history");
         setTranslationHistory(response.data);
         setLoading(false);
       } catch (error) {
@@ -23,10 +22,9 @@ const TranslationHistory = () => {
     fetchTranslationHistory();
   }, []);
 
-  //----------------------------------------------delete function-----------------------------------------------------
   const handleDeleteTranslation = async (id) => {
     try {
-      await axios.delete(`/api/translation/history/${id}`);
+      await axios.delete(`http://localhost:8080/api/translation/history/${id}`);
       setTranslationHistory((prevHistory) =>
         prevHistory.filter((translation) => translation._id !== id)
       );
@@ -43,7 +41,7 @@ const TranslationHistory = () => {
       ) : (
         <ul>
           {translationHistory.map((translation, index) => (
-            <li key={index}>
+            <li className="translation-item" key={index}>
               <div>
                 <strong>Original Text:</strong> {translation.originalText}
               </div>

@@ -89,7 +89,7 @@ function Translate() {
     if (inputText && translatedText) {
       // Make a POST request to save translation history
       axios
-        .post("/api/translation/history", {
+        .post("http://localhost:8080/api/translation/history", {
           originalText: inputText,
           translatedText: translatedText,
         })
@@ -188,7 +188,13 @@ function Translate() {
           />
         </div>
       </div>
+
+      <button onClick={handleTranslationHistoryPost}> 
+        Save Translate 
+      </button>
+      
     </div>
+
   );
 }
 
