@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { PDFDownloadLink, Document, Page, Text } from "@react-pdf/renderer";
 import "../styles/UserProfile.css"; // Import external CSS file
+import { toast } from "react-toastify";
 
 const UserProfile = () => {
   const [user, setUser] = useState(null);
@@ -40,9 +41,11 @@ const UserProfile = () => {
       await axios.put("http://localhost:8090/user/profile", editedUser);
       setIsEditing(false);
       fetchUserProfile();
+      toast.success("Profile Updated Successfully");
     } catch (error) {
       console.error(error);
       setError("Failed to update user profile");
+      toast.error("Failed to update user profile");
     }
   };
 
@@ -50,9 +53,11 @@ const UserProfile = () => {
     try {
       await axios.delete("http://localhost:8090/user/profile");
       setUser(null);
+      toast.error("Profile Deleted");
     } catch (error) {
       console.error(error);
       setError("Failed to delete user profile");
+      toast.error("Failed to delete user profile");
     }
   };
 
