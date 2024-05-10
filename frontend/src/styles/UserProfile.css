@@ -1,15 +1,11 @@
-/* UserProfile.css */
 
 .profile-container {
   width: 80%;
   margin-top: 7%;
+  margin-bottom: 13.5%;
   margin-left: 10%;
   padding: 20px;
-<<<<<<< HEAD
-  border: 3px solid #aaaaaa;
-=======
-  border: 1px solid #ccc;
->>>>>>> e7c0fc85b9913fb766041aace11a13c4de022305
+  border: 3px solid #78949c;
   border-radius: 5px;
   background-color: #f9f9f9;
 }
@@ -29,43 +25,47 @@
   list-style: none;
   padding: 0;
 }
+.container{
+  display: contents;
+  ;
+}
+
 
 .user-item {
   margin-bottom: 10px;
   font-size: 16px;
   padding: 10px;
-<<<<<<< HEAD
   border: 1px solid #ffffff;
-=======
-  border: 1px solid #ccc;
->>>>>>> e7c0fc85b9913fb766041aace11a13c4de022305
   border-radius: 5px;
-  background-color: #fff;
+  background-color: #ffffff;
   transition: background-color 0.3s ease;
 }
 
 .user-item:hover {
-  background-color: #f0f0f0;
+  background-color: #f9f9f9;
 }
 
 .download-pdf {
   padding: 10px;
-<<<<<<< HEAD
-  background-color: rgb(26, 68, 44);
-=======
-  background-color: rgb(46, 46, 100);
->>>>>>> e7c0fc85b9913fb766041aace11a13c4de022305
+  background-color: rgb(30, 63, 27);
   border-radius: 5px;
   color: white;
   margin-left: 10px;
 }
+.download-pdf:hover {
+  background-color: #236849;
 
+}
 .update-button {
   padding: 7px;
-  background-color: rgb(3, 13, 165);
+  background-color: rgb(52, 57, 119);
   border-radius: 5px;
   color: white;
-  margin-left: 75%;
+  margin-left: 35%;
+}
+
+.update-button:hover {
+  background-color: #33429b;
 }
 
 .delete-button {
@@ -76,19 +76,28 @@
   margin-left: 10px;
 }
 
-.save-button {
-  padding: 6px 15px;
-  background-color: rgb(0, 93, 16);
-  border-radius: 5px;
-  color: white;
-  margin-left: 10px;
+.delete-button:hover {
+  background-color: #ab3832;
 }
 
-/* UserProfileStyles.css */
+.save-button {
+  padding: 6px 15px;
+  background-color: rgb(16, 147, 38);
+  border-radius: 5px;
+  color: white;
+  margin-left: 75px;
+  margin-top: 20px;
+  margin-right: 800px;
+}
+
+.save-button:hover {
+  background-color: #5ba76a;
+}
+
+
 
 .profile-container {
   font-family: Helvetica;
-  background-color: rgb(216, 211, 208);
   padding: 20px;
 }
 

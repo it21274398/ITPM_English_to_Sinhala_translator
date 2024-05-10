@@ -1,3 +1,5 @@
+// UserProfile.js
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { PDFDownloadLink, Document, Page, Text } from "@react-pdf/renderer";
@@ -29,6 +31,7 @@ const UserProfile = () => {
       firstName: user.firstName,
       lastName: user.lastName,
       contact: user.contact,
+      email: user.email
     });
   };
 
@@ -46,8 +49,6 @@ const UserProfile = () => {
   const handleDeleteProfile = async () => {
     try {
       await axios.delete("http://localhost:8090/user/profile");
-      // Optionally, you can redirect the user to a login page or another page after deletion
-      // For example: window.location.href = "/login";
       setUser(null);
     } catch (error) {
       console.error(error);
@@ -61,10 +62,10 @@ const UserProfile = () => {
       <Page>
         <Text>========My Details========</Text>
         <div className="section">
-          <Text>First Name : {user.firstName}</Text>
+        <Text>First Name : {user.firstName}</Text>
         </div>
         <div className="section">
-          <Text>Last Name : {user.lastName}</Text>
+        <Text>Last Name : {user.lastName}</Text>
         </div>
         <div className="section">
           <Text>Contact : {user.contact}</Text>
@@ -82,51 +83,58 @@ const UserProfile = () => {
       {error && <p className="error">{error}</p>}
       {user && (
         <div className="user-details">
-          <p>
-            <strong>First Name:</strong>{" "}
-            {isEditing ? (
-              <input
-                type="text"
-                value={editedUser.firstName}
-                onChange={(e) =>
-                  setEditedUser({ ...editedUser, firstName: e.target.value })
-                }
-              />
-            ) : (
-              user.firstName
-            )}
-          </p>
-          <p>
-            <strong>Last Name:</strong>{" "}
-            {isEditing ? (
-              <input
-                type="text"
-                value={editedUser.lastName}
-                onChange={(e) =>
-                  setEditedUser({ ...editedUser, lastName: e.target.value })
-                }
-              />
-            ) : (
-              user.lastName
-            )}
-          </p>
-          <p>
-            <strong>Contact:</strong>{" "}
-            {isEditing ? (
-              <input
-                type="text"
-                value={editedUser.contact}
-                onChange={(e) =>
-                  setEditedUser({ ...editedUser, contact: e.target.value })
-                }
-              />
-            ) : (
-              user.contact
-            )}
-          </p>
-          <p>
-            <strong>Email:</strong> {user.email}
-          </p>
+          <div className="container">
+            <p className="label">First Name:</p>
+            <div className="value">
+              {isEditing ? (
+                <input
+                  type="text"
+                  value={editedUser.firstName}
+                  onChange={(e) =>
+                    setEditedUser({ ...editedUser, firstName: e.target.value })
+                  }
+                />
+              ) : (
+                user.firstName
+              )}
+            </div>
+          </div>
+          <div className="container">
+            <p className="label">Last Name:</p>
+            <div className="value">
+              {isEditing ? (
+                <input
+                  type="text"
+                  value={editedUser.lastName}
+                  onChange={(e) =>
+                    setEditedUser({ ...editedUser, lastName: e.target.value })
+                  }
+                />
+              ) : (
+                user.lastName
+              )}
+            </div>
+          </div>
+          <div className="container">
+            <p className="label">Contact:</p>
+            <div className="value">
+              {isEditing ? (
+                <input
+                  type="text"
+                  value={editedUser.contact}
+                  onChange={(e) =>
+                    setEditedUser({ ...editedUser, contact: e.target.value })
+                  }
+                />
+              ) : (
+                user.contact
+              )}
+            </div>
+          </div>
+          <div className="container">
+            <p className="label">Email:</p>
+            <div className="value">{user.email}</div>
+          </div>
           {isEditing ? (
             <button className="save-button" onClick={handleSaveProfile}>
               Save
