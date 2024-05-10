@@ -6,6 +6,8 @@ import "../styles/UserProfile.css"; // Import external CSS file
 const UserProfile = () => {
   const [user, setUser] = useState(null);
   const [error, setError] = useState("");
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedUser, setEditedUser] = useState(null);
 
   useEffect(() => {
     fetchUserProfile();
@@ -18,6 +20,38 @@ const UserProfile = () => {
     } catch (error) {
       console.error(error);
       setError("Failed to fetch user profile");
+    }
+  };
+
+  const handleUpdateProfile = () => {
+    setIsEditing(true);
+    setEditedUser({
+      firstName: user.firstName,
+      lastName: user.lastName,
+      contact: user.contact,
+    });
+  };
+
+  const handleSaveProfile = async () => {
+    try {
+      await axios.put("http://localhost:8090/user/profile", editedUser);
+      setIsEditing(false);
+      fetchUserProfile();
+    } catch (error) {
+      console.error(error);
+      setError("Failed to update user profile");
+    }
+  };
+
+  const handleDeleteProfile = async () => {
+    try {
+      await axios.delete("http://localhost:8090/user/profile");
+      // Optionally, you can redirect the user to a login page or another page after deletion
+      // For example: window.location.href = "/login";
+      setUser(null);
+    } catch (error) {
+      console.error(error);
+      setError("Failed to delete user profile");
     }
   };
 
@@ -49,17 +83,64 @@ const UserProfile = () => {
       {user && (
         <div className="user-details">
           <p>
-            <strong>First Name:</strong> {user.firstName}
+            <strong>First Name:</strong>{" "}
+            {isEditing ? (
+              <input
+                type="text"
+                value={editedUser.firstName}
+                onChange={(e) =>
+                  setEditedUser({ ...editedUser, firstName: e.target.value })
+                }
+              />
+            ) : (
+              user.firstName
+            )}
           </p>
           <p>
-            <strong>Last Name:</strong> {user.lastName}
+            <strong>Last Name:</strong>{" "}
+            {isEditing ? (
+              <input
+                type="text"
+                value={editedUser.lastName}
+                onChange={(e) =>
+                  setEditedUser({ ...editedUser, lastName: e.target.value })
+                }
+              />
+            ) : (
+              user.lastName
+            )}
           </p>
           <p>
-            <strong>Contact:</strong> {user.contact}
+            <strong>Contact:</strong>{" "}
+            {isEditing ? (
+              <input
+                type="text"
+                value={editedUser.contact}
+                onChange={(e) =>
+                  setEditedUser({ ...editedUser, contact: e.target.value })
+                }
+              />
+            ) : (
+              user.contact
+            )}
           </p>
           <p>
             <strong>Email:</strong> {user.email}
           </p>
+          {isEditing ? (
+            <button className="save-button" onClick={handleSaveProfile}>
+              Save
+            </button>
+          ) : (
+            <>
+              <button className="update-button" onClick={handleUpdateProfile}>
+                Update
+              </button>
+              <button className="delete-button" onClick={handleDeleteProfile}>
+                Delete
+              </button>
+            </>
+          )}
           {/* PDF Download Link */}
           <PDFDownloadLink
             className="download-pdf"
