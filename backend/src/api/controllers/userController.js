@@ -66,4 +66,35 @@ const signin = async (req, res) => {
   }
 };
 
-module.exports = { signup, signin };
+// userController.js
+
+const getUserProfile = async (req, res) => {
+  // Fetch user profile from database based on user ID
+  const userId = req.user.id; // Assuming you're using authentication middleware to get user ID
+  try {
+    const userProfile = await User.findById(userId);
+    res.status(200).json(userProfile);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server Error" });
+  }
+};
+
+const updateUserProfile = async (req, res) => {
+  // Update user profile in database
+  const userId = req.user.id;
+  const { firstName, lastName, contact } = req.body;
+  try {
+    const updatedUserProfile = await User.findByIdAndUpdate(
+      userId,
+      { firstName, lastName, contact },
+      { new: true }
+    );
+    res.status(200).json(updatedUserProfile);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server Error" });
+  }
+};
+
+module.exports = { signup, signin, getUserProfile, updateUserProfile };
