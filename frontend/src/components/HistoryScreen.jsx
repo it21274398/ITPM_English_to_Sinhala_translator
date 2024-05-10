@@ -4,13 +4,15 @@ import "../styles/History.css";
 
 const TranslationHistory = () => {
   const [translationHistory, setTranslationHistory] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [setLoading] = useState(true);
+  const [setError] = useState(null);
 
   useEffect(() => {
     const fetchTranslationHistory = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/translation/history");
+        const response = await axios.get(
+          "http://localhost:8090/api/translation/history"
+        );
         setTranslationHistory(response.data);
         setLoading(false);
       } catch (error) {
@@ -20,11 +22,11 @@ const TranslationHistory = () => {
     };
 
     fetchTranslationHistory();
-  }, []);
+  });
 
   const handleDeleteTranslation = async (id) => {
     try {
-      await axios.delete(`http://localhost:8080/api/translation/history/${id}`);
+      await axios.delete(`http://localhost:8090/api/translation/history/${id}`);
       setTranslationHistory((prevHistory) =>
         prevHistory.filter((translation) => translation._id !== id)
       );
@@ -35,7 +37,9 @@ const TranslationHistory = () => {
 
   return (
     <div className="container1" id="histry-div">
-      <h2 className="form-name-histor"><strong>Translation History</strong></h2>
+      <h2 className="form-name-histor">
+        <strong>Translation History</strong>
+      </h2>
       {translationHistory && translationHistory.length === 0 ? (
         <p className="histry-error">No translation history available.</p>
       ) : (
