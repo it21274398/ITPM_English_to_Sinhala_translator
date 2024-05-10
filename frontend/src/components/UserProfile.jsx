@@ -31,7 +31,7 @@ const UserProfile = () => {
       firstName: user.firstName,
       lastName: user.lastName,
       contact: user.contact,
-      email: user.email
+      email: user.email,
     });
   };
 
@@ -62,10 +62,10 @@ const UserProfile = () => {
       <Page>
         <Text>========My Details========</Text>
         <div className="section">
-        <Text>First Name : {user.firstName}</Text>
+          <Text>First Name : {user.firstName}</Text>
         </div>
         <div className="section">
-        <Text>Last Name : {user.lastName}</Text>
+          <Text>Last Name : {user.lastName}</Text>
         </div>
         <div className="section">
           <Text>Contact : {user.contact}</Text>
