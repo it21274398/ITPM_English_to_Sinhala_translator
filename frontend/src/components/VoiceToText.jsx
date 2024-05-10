@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "../styles/texttospeesh.css";
 import { mic } from "ionicons/icons";
 import { IonIcon } from "@ionic/react";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 const SpeechToTextTranslator = () => {
   const [sinhalaText, setSinhalaText] = useState("");
@@ -51,7 +53,32 @@ const SpeechToTextTranslator = () => {
       setEnglishText("Translation Error");
     }
   };
+  //-------------------------------------------------History post-------------------------------------------------------
+  const handleTranslationHistoryPost = () => {
+    if (sinhalaText && englishText) {
+      // Make a POST request to save translation history
+      axios
+        .post("http://localhost:8090/api/translation/history", {
+          originalText: sinhalaText,
+          translatedText: englishText,
+        })
+        .then((response) => {
+          console.log("Translation history saved:", response.data);
+          toast.success("Translation history saved successfully!");
+          // Optionally, you can update the translation history state here if needed
+        })
+        .catch((error) => {
+          console.error("Error saving translation history:", error);
+          toast.error("Error saving translation history");
+        });
+    } else {
+      console.error(
+        "Both input text and translated text are required to save translation history."
+      );
+    }
+  };
 
+  //-------------------------------------------------------------------------------------------------------------------
   return (
     <div className="container1">
       <button onClick={handleSpeechRecognition}>
@@ -68,6 +95,9 @@ const SpeechToTextTranslator = () => {
         </h3>
         {error && <p style={{ color: "red" }}>{error}</p>}{" "}
         {/* Display error message if there's an error */}
+      </div>
+      <div className="save-translation-item">
+        <button onClick={handleTranslationHistoryPost}>Save Translate</button>
       </div>
     </div>
   );
