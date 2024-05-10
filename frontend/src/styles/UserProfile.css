@@ -3,10 +3,13 @@
 .profile-container {
   width: 80%;
   margin-top: 7%;
-  margin-bottom: 20%;
   margin-left: 10%;
   padding: 20px;
+<<<<<<< HEAD
   border: 3px solid #aaaaaa;
+=======
+  border: 1px solid #ccc;
+>>>>>>> e7c0fc85b9913fb766041aace11a13c4de022305
   border-radius: 5px;
   background-color: #f9f9f9;
 }
@@ -31,7 +34,11 @@
   margin-bottom: 10px;
   font-size: 16px;
   padding: 10px;
+<<<<<<< HEAD
   border: 1px solid #ffffff;
+=======
+  border: 1px solid #ccc;
+>>>>>>> e7c0fc85b9913fb766041aace11a13c4de022305
   border-radius: 5px;
   background-color: #fff;
   transition: background-color 0.3s ease;
@@ -43,11 +50,14 @@
 
 .download-pdf {
   padding: 10px;
+<<<<<<< HEAD
   background-color: rgb(26, 68, 44);
+=======
+  background-color: rgb(46, 46, 100);
+>>>>>>> e7c0fc85b9913fb766041aace11a13c4de022305
   border-radius: 5px;
   color: white;
   margin-left: 10px;
-  
 }
 
 .update-button {
@@ -55,7 +65,7 @@
   background-color: rgb(3, 13, 165);
   border-radius: 5px;
   color: white;
-  margin-left: 35%;
+  margin-left: 75%;
 }
 
 .delete-button {
@@ -80,7 +90,6 @@
   font-family: Helvetica;
   background-color: rgb(216, 211, 208);
   padding: 20px;
-  
 }
 
 .title {

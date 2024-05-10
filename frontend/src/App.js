@@ -10,7 +10,7 @@ import AboutUs from "./components/AboutUScreen";
 import VoiceToText from "./components/VoiceToText";
 import HistoryScreen from "./components/HistoryScreen";
 import GrmmerChecker from "./components/GrammerCheck/CheckerDemo";
-
+import { ToastContainer } from "react-toastify";
 // Layout component to conditionally render header and footer
 function Layout({ children }) {
   const location = useLocation();
@@ -42,6 +42,7 @@ function App() {
   return (
     <BrowserRouter>
       <Layout>
+        <ToastContainer />
         <Routes>
           <Route path="/" element={<LoginScreen />} />
           <Route path="/register" element={<Registerscreen />} />
