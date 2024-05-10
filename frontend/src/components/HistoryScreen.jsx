@@ -4,8 +4,8 @@ import "../styles/History.css";
 
 const TranslationHistory = () => {
   const [translationHistory, setTranslationHistory] = useState([]);
-  const [setLoading] = useState(true);
-  const [setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchTranslationHistory = async () => {
@@ -22,7 +22,7 @@ const TranslationHistory = () => {
     };
 
     fetchTranslationHistory();
-  });
+  }, []);
 
   const handleDeleteTranslation = async (id) => {
     try {
@@ -36,7 +36,7 @@ const TranslationHistory = () => {
   };
 
   return (
-    <div className="container1" id="histry-div">
+    <div className="container2" id="histry-div">
       <h2 className="form-name-histor">
         <strong>Translation History</strong>
       </h2>

@@ -1,4 +1,4 @@
-.container1 {
+.container2 {
   background-color: #f7f7f7;
   border-radius: 10px;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
@@ -27,6 +27,7 @@
 }
 
 .translation-item button {
+  margin-left: 45%;
   background-color: #fb3826;
   color: #fff;
   border: none;
