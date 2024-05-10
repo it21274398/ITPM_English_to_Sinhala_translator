@@ -134,10 +134,10 @@ const UserProfile = () => {
           ) : (
             <>
               <button className="update-button" onClick={handleUpdateProfile}>
-                Update
+                Update Profile
               </button>
               <button className="delete-button" onClick={handleDeleteProfile}>
-                Delete
+                Delete Profile
               </button>
             </>
           )}

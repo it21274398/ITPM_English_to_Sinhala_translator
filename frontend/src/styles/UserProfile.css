@@ -6,7 +6,7 @@
   margin-bottom: 20%;
   margin-left: 10%;
   padding: 20px;
-  border: 3px solid #e2c2c2;
+  border: 3px solid #aaaaaa;
   border-radius: 5px;
   background-color: #f9f9f9;
 }
@@ -31,7 +31,7 @@
   margin-bottom: 10px;
   font-size: 16px;
   padding: 10px;
-  border: 1px solid #fff;
+  border: 1px solid #ffffff;
   border-radius: 5px;
   background-color: #fff;
   transition: background-color 0.3s ease;
@@ -43,7 +43,7 @@
 
 .download-pdf {
   padding: 10px;
-  background-color: rgb(81, 81, 165);
+  background-color: rgb(26, 68, 44);
   border-radius: 5px;
   color: white;
   margin-left: 10px;
@@ -78,6 +78,7 @@
 
 .profile-container {
   font-family: Helvetica;
+  background-color: rgb(216, 211, 208);
   padding: 20px;
   
 }
