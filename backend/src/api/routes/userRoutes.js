@@ -1,19 +1,21 @@
 import express from "express";
-
 import {
   signup,
   signin,
   getUserProfile,
   updateUserProfile,
+  deleteUserProfile,
 } from "../controllers/userController.js";
 
 const userRouter = express.Router();
 
+// Signup and Signin routes
 userRouter.post("/signup", signup);
 userRouter.post("/signin", signin);
 
-// Profile routes
-userRouter.get("/profile", getUserProfile); // Route to fetch user profile
-userRouter.put("/profile", updateUserProfile); // Route to update user profile
+// User profile routes
+userRouter.get("/profile", getUserProfile); // Fetch user profile
+userRouter.put("/profile", updateUserProfile); // Update user profile
+userRouter.delete("/profile", deleteUserProfile); // Delete user profile
 
 export default userRouter;
