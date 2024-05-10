@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../styles/LoginScreen.css";
 import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const LoginScreen = () => {
   const [email, setEmail] = useState("");
@@ -36,12 +38,11 @@ const LoginScreen = () => {
       window.location = "/home";
     } catch (err) {
       if (err.response.status === 404) {
-        document.querySelector(".incorectusername").innerHTML =
-          "Please register before login";
-      }
-      if (err.response.status === 400) {
-        document.querySelector(".incorectusername").innerHTML =
-          "Invalid Password";
+        toast.error("Please register before login");
+      } else if (err.response.status === 400) {
+        toast.error("Invalid Password");
+      } else {
+        toast.error("An error occurred. Please try again later.");
       }
     } finally {
       // Stop loading animation
@@ -50,8 +51,8 @@ const LoginScreen = () => {
   };
 
   return (
-    <div class="container" id="container">
-      <div class="form-container sign-in-container">
+    <div className="container" id="container">
+      <div className="form-container sign-in-container">
         <form className="loginform">
           <h1 className="form-name">Login</h1>
 
@@ -96,6 +97,7 @@ const LoginScreen = () => {
         <br />
         <br />
       </div>
+      <ToastContainer />
     </div>
   );
 };
