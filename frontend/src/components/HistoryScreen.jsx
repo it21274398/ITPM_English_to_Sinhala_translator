@@ -5,8 +5,8 @@ import { toast } from "react-toastify";
 
 const TranslationHistory = () => {
   const [translationHistory, setTranslationHistory] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [, setLoading] = useState(true);
+  const [, setError] = useState(null);
 
   useEffect(() => {
     const fetchTranslationHistory = async () => {

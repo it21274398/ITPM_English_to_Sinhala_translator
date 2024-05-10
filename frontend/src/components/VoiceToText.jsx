@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 const SpeechToTextTranslator = () => {
   const [sinhalaText, setSinhalaText] = useState("");
   const [englishText, setEnglishText] = useState("");
-  const [error, setError] = useState(null); // State variable to handle errors
+  const [, setError] = useState(null); // State variable to handle errors
 
   const handleSpeechRecognition = () => {
     const recognition = new window.webkitSpeechRecognition();
