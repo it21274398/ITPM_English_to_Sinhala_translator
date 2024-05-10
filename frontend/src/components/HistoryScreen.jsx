@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/History.css";
+import { toast } from "react-toastify";
 
 const TranslationHistory = () => {
   const [translationHistory, setTranslationHistory] = useState([]);
@@ -30,6 +31,7 @@ const TranslationHistory = () => {
       setTranslationHistory((prevHistory) =>
         prevHistory.filter((translation) => translation._id !== id)
       );
+      toast.success("Deleted Successfully");
     } catch (error) {
       setError(error.message);
     }

@@ -53,32 +53,31 @@ const SpeechToTextTranslator = () => {
       setEnglishText("Translation Error");
     }
   };
-  //-------------------------------------------------History post-------------------------------------------------------
+
   const handleTranslationHistoryPost = () => {
-    if (sinhalaText && englishText) {
-      // Make a POST request to save translation history
-      axios
-        .post("http://localhost:8090/api/translation/history", {
-          originalText: sinhalaText,
-          translatedText: englishText,
-        })
-        .then((response) => {
-          console.log("Translation history saved:", response.data);
-          toast.success("Translation history saved successfully!");
-          // Optionally, you can update the translation history state here if needed
-        })
-        .catch((error) => {
-          console.error("Error saving translation history:", error);
-          toast.error("Error saving translation history");
-        });
-    } else {
-      console.error(
-        "Both input text and translated text are required to save translation history."
-      );
-    }
+    // if (sinhalaText && englishText) {
+    // Make a POST request to save translation history
+    axios
+      .post("http://localhost:8090/api/translation/history", {
+        originalText: sinhalaText,
+        translatedText: englishText,
+      })
+      .then((response) => {
+        console.log("Translation history saved:", response.data);
+        toast.success("Translation history saved successfully!");
+        // Optionally, you can update the translation history state here if needed
+      })
+      .catch((error) => {
+        console.error("Error saving translation history:", error);
+        toast.error("Error saving translation history");
+      });
+    // } else {
+    // console.error(
+    // "Both input text and translated text are required to save translation history."
+    // );
+    // }
   };
 
-  //-------------------------------------------------------------------------------------------------------------------
   return (
     <div className="container1">
       <button onClick={handleSpeechRecognition}>
@@ -93,11 +92,14 @@ const SpeechToTextTranslator = () => {
           <p className="paregraph">English Translation :</p>{" "}
           <p>{englishText}</p>
         </h3>
-        {error && <p style={{ color: "red" }}>{error}</p>}{" "}
+        {/* {error && <p style={{ color: "red" }}>{error}</p>} */}
         {/* Display error message if there's an error */}
       </div>
       <div className="save-translation-item">
-        <button onClick={handleTranslationHistoryPost}>Save Translate</button>
+        <button onClick={handleTranslationHistoryPost}>
+          {/* disabled={!sinhalaText || !englishText} */}
+          Save Translate
+        </button>
       </div>
     </div>
   );
