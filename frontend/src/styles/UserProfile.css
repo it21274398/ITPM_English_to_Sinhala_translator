@@ -1,31 +1,100 @@
-.title {
-  text-align: center;
-  color: rgb(0, 0, 0);
-  font-size: 30px;
-  font-family: monospace;
-}
+/* UserProfile.css */
+
 .profile-container {
+  width: 80%;
+  margin-top: 7%;
+  margin-left: 10%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.error {
+  color: red;
+  font-size: 18px;
+}
+
+.user-list {
+  list-style: none;
+  padding: 0;
+}
+
+.user-item {
+  margin-bottom: 10px;
+  font-size: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.user-item:hover {
+  background-color: #f0f0f0;
+}
+
+.download-pdf {
+  padding: 10px;
+  background-color: rgb(46, 46, 100);
+  border-radius: 5px;
+  color: white;
+  margin-left: 10px;
+}
+
+.update-button {
+  padding: 7px;
+  background-color: rgb(3, 13, 165);
+  border-radius: 5px;
+  color: white;
+  margin-left: 75%;
+}
+
+.delete-button {
+  padding: 7px;
+  background-color: rgb(137, 0, 0);
+  border-radius: 5px;
+  color: white;
+  margin-left: 10px;
+}
+
+.save-button {
+  padding: 6px 15px;
+  background-color: rgb(0, 93, 16);
+  border-radius: 5px;
+  color: white;
+  margin-left: 10px;
+}
+
+/* UserProfileStyles.css */
+
+.profile-container {
+  font-family: Helvetica;
+  padding: 20px;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
   text-align: center;
-  /* background-image: linear-gradient(to right, #d7d6d6, #ffffff, #dddddd); */
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-bottom: 50px;
-  margin-top: 50px;
-  padding: 80px;
+  text-decoration: underline;
 }
 
-.userinputs {
-  font-size: 15px;
-  font-family: monospace;
-  color: rgb(0, 0, 0);
-  padding-top: 40px;
-  padding-bottom: 10px;
+.section {
+  margin-bottom: 10px;
 }
 
-.userprofileinputs {
-  border: 1px solid rgb(93, 93, 93);
-  box-shadow: 5px 5px 10px #0000006e;
-  border-radius: 6px;
-  padding: 5px 60px;
-  background-color:  rgba(148, 148, 148, 0.449);;
+.label {
+  font-weight: bold;
+}
+
+.value {
+  margin-left: 10px;
 }

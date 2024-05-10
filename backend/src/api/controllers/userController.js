@@ -1,10 +1,13 @@
 import User from "../models/userModel.js";
-
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+
 const SECRET_KEY = "RECIPEAPI";
 
-//existing User login
+// Define the dummy token
+const dummyToken =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbmRhcnVuYXdvZGEyMDAxQGdtYWlsLmNvbSIsImlkIjoiNjYzZGY0MTZhZWI2OTU0ZWNjOWYyNDQzIiwiaWF0IjoxNzE1MzQ0MDIzLCJleHAiOjE3MTUzNDc2MjN9.G1eN0clbXZePGwwLdH6GYw3_mJbFU4WEDPNEHVzhTlw";
+
 const signup = async (req, res) => {
   const { firstName, lastName, contact, email, password } = req.body;
   try {
@@ -26,13 +29,12 @@ const signup = async (req, res) => {
     const token = jwt.sign(
       { email: result.email, id: result._id },
       SECRET_KEY,
-      {
-        expiresIn: "1h",
-      }
+      { expiresIn: "1h" }
     );
+
     res.status(201).json({ result, token });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return res.status(500).json({ message: "Something went wrong" });
   }
 };
@@ -58,12 +60,58 @@ const signin = async (req, res) => {
     );
 
     res.status(201).json({ result: existingUser, token });
-    /* return user data */
-    // res.status(200).json({ result });
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return res.status(500).json({ message: "Something went wrong" });
   }
 };
 
-module.exports = { signup, signin };
+const getUserProfile = async (req, res) => {
+  try {
+    const decodedToken = jwt.verify(dummyToken, SECRET_KEY);
+    const userId = decodedToken.id;
+
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.status(200).json(user);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Something went wrong" });
+  }
+};
+
+const updateUserProfile = async (req, res) => {
+  try {
+    const decodedToken = jwt.verify(dummyToken, SECRET_KEY);
+    const userId = decodedToken.id;
+
+    const { firstName, lastName, contact } = req.body;
+    const updatedUserProfile = await User.findByIdAndUpdate(
+      userId,
+      { firstName, lastName, contact },
+      { new: true }
+    );
+    res.status(200).json(updatedUserProfile);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server Error" });
+  }
+};
+
+const deleteUserProfile = async (req, res) => {
+  try {
+    const decodedToken = jwt.verify(dummyToken, SECRET_KEY);
+    const userId = decodedToken.id;
+
+    await User.findByIdAndDelete(userId);
+    res.status(200).json({ message: "User deleted successfully" });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server Error" });
+  }
+};
+
+export { signup, signin, getUserProfile, updateUserProfile, deleteUserProfile };
