@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "../styles/RegisterScreen.css";
 import axios from "axios";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 
 const RegisterScreen = () => {
   const [firstName, setFirstName] = useState("");
@@ -60,6 +62,7 @@ const RegisterScreen = () => {
     } catch (err) {
       if (err.response.status === 500) {
         setErrorMessage("There was a problem with the server.");
+        toast.error("There was a problem with the server");
       }
     }
   };

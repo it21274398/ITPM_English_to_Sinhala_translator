@@ -35,6 +35,7 @@ const LoginScreen = () => {
       console.log(res);
       localStorage.setItem("authToken", res.data.token);
       localStorage.setItem("userData", JSON.stringify(res.data.result));
+      toast.success("Log in successfully!");
       window.location = "/home";
     } catch (err) {
       if (err.response.status === 404) {
