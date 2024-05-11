@@ -2,13 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../styles/History.css";
 import { toast } from "react-toastify";
-import jsPDF from "jspdf";
 
 const TranslationHistory = () => {
   const [translationHistory, setTranslationHistory] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [, setLoading] = useState(true);
+  const [, setError] = useState(null);
 
   useEffect(() => {
     const fetchTranslationHistory = async () => {
@@ -39,65 +37,16 @@ const TranslationHistory = () => {
     }
   };
 
-  const handleSearch = (event) => {
-    setSearchQuery(event.target.value);
-  };
-
-  const filteredHistory = translationHistory.filter((translation) =>
-    translation.translatedText.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
-  const downloadPdf = () => {
-    const doc = new jsPDF();
-    let yOffset = 10;
-
-    // Title
-    doc.setFontSize(18);
-    doc.text("Translation History", 10, yOffset);
-    yOffset += 10;
-
-    // Add a line
-    doc.setLineWidth(0.5);
-    doc.line(10, yOffset, 200, yOffset);
-    yOffset += 5;
-
-    // Translation entries
-    doc.setFontSize(12);
-    filteredHistory.forEach((translation) => {
-      doc.text(`Original Text: ${translation.originalText}`, 10, yOffset);
-      yOffset += 7;
-      doc.text(`Translated Text: ${translation.translatedText}`, 10, yOffset);
-      yOffset += 10;
-    });
-
-    // Save and download the PDF
-    doc.save("translation_history.pdf");
-  };
-
   return (
     <div className="container2" id="histry-div">
       <h2 className="form-name-histor">
         <strong>Translation History</strong>
       </h2>
-      <div>
-        <input
-          type="text"
-          placeholder="Search by Translated Text"
-          value={searchQuery}
-          onChange={handleSearch}
-        />
-        <button onClick={downloadPdf}>Download PDF</button>
-      </div>
-
-      {loading ? (
-        <p>Loading...</p>
-      ) : error ? (
-        <p className="histry-error">{error}</p>
-      ) : filteredHistory.length === 0 ? (
+      {translationHistory && translationHistory.length === 0 ? (
         <p className="histry-error">No translation history available.</p>
       ) : (
         <ul>
-          {filteredHistory.map((translation, index) => (
+          {translationHistory.map((translation, index) => (
             <li className="translation-item" key={index}>
               <div className="translate-name-histor">
                 <strong>Original Text :</strong> {translation.originalText}
