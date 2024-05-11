@@ -5,8 +5,9 @@ import { toast } from "react-toastify";
 
 const TranslationHistory = () => {
   const [translationHistory, setTranslationHistory] = useState([]);
-  const [, setLoading] = useState(true);
-  const [, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     const fetchTranslationHistory = async () => {
@@ -37,16 +38,35 @@ const TranslationHistory = () => {
     }
   };
 
+  const handleSearch = (event) => {
+    setSearchQuery(event.target.value);
+  };
+
+  const filteredHistory = translationHistory.filter((translation) =>
+    translation.translatedText.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="container2" id="histry-div">
       <h2 className="form-name-histor">
         <strong>Translation History</strong>
       </h2>
-      {translationHistory && translationHistory.length === 0 ? (
+      <input
+        type="text"
+        placeholder="Search by Translated Text"
+        value={searchQuery}
+        onChange={handleSearch}
+      />
+
+      {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p className="histry-error">{error}</p>
+      ) : filteredHistory.length === 0 ? (
         <p className="histry-error">No translation history available.</p>
       ) : (
         <ul>
-          {translationHistory.map((translation, index) => (
+          {filteredHistory.map((translation, index) => (
             <li className="translation-item" key={index}>
               <div className="translate-name-histor">
                 <strong>Original Text :</strong> {translation.originalText}
