@@ -42,18 +42,21 @@ const TranslationHistory = () => {
     setSearchQuery(event.target.value);
   };
 
-  const filteredHistory = translationHistory.filter((translation) =>
-    translation.translatedText.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredHistory = translationHistory.filter((translation) => {
+    const originalText = translation.originalText.toLowerCase();
+    const translatedText = translation.translatedText.toLowerCase();
+    const query = searchQuery.toLowerCase();
+    return originalText.includes(query) || translatedText.includes(query);
+  });
 
   return (
-    <div className="container2" id="histry-div">
+    <div className="container2" id="history-div">
       <h2 className="form-name-histor">
         <strong>Translation History</strong>
       </h2>
       <input
         type="text"
-        placeholder="Search by Translated Text"
+        placeholder="Search by Translated Text or Original Text"
         value={searchQuery}
         onChange={handleSearch}
       />
@@ -61,9 +64,9 @@ const TranslationHistory = () => {
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
-        <p className="histry-error">{error}</p>
+        <p className="history-error">{error}</p>
       ) : filteredHistory.length === 0 ? (
-        <p className="histry-error">No translation history available.</p>
+        <p className="history-error">No translation history available.</p>
       ) : (
         <ul>
           {filteredHistory.map((translation, index) => (
