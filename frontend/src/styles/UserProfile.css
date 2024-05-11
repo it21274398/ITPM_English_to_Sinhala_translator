@@ -24,7 +24,11 @@
   list-style: none;
   padding: 0;
 }
+<<<<<<< HEAD
 #cfcf {
+=======
+#idcontainer {
+>>>>>>> a4728dc0649e7ef6dfd6bea0cb0ce66bc044e075
   display: contents;
 }
 
