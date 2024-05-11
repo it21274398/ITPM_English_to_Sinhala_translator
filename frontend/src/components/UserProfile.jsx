@@ -156,7 +156,7 @@ const UserProfile = () => {
             fileName="user_profile.pdf"
           >
             {({ blob, url, loading, error }) =>
-              loading ? "Loading document..." : "Download PDF"
+              loading ? "Loading document..." : "Download My Profile"
             }
           </PDFDownloadLink>
         </div>
