@@ -8,6 +8,7 @@ const SECRET_KEY = "RECIPEAPI";
 const dummyToken =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbmRhcnVuYXdvZGEyMDAxQGdtYWlsLmNvbSIsImlkIjoiNjYzZjAwMGM3MjM2NTQ5YzE5MWFmNDJlIiwiaWF0IjoxNzE1NDA1MTExLCJleHAiOjE3MTU0MDg3MTF9.QeZKGQau5LKiAmjcDrfr9Ittbqu25fl4sbRCyPqFX70";
 
+
 const signup = async (req, res) => {
   const { firstName, lastName, contact, email, password } = req.body;
   try {
