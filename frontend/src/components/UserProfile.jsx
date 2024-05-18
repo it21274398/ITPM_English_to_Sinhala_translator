@@ -10,21 +10,30 @@ const UserProfile = () => {
   const [error, setError] = useState("");
   const [isEditing, setIsEditing] = useState(false);
   const [editedUser, setEditedUser] = useState(null);
+  const token = localStorage.getItem("authToken");
+  console.log(token)
+ 
 
   useEffect(() => {
     fetchUserProfile();
   }, []);
 
+
   const fetchUserProfile = async () => {
     try {
-      const response = await axios.get("http://localhost:8090/user/profile");
+    
+      const response = await axios.get("http://localhost:8090/user/profile", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       setUser(response.data);
     } catch (error) {
       console.error(error);
       setError("Failed to fetch user profile");
     }
   };
-
+  
   const handleUpdateProfile = () => {
     setIsEditing(true);
     setEditedUser({
@@ -37,7 +46,15 @@ const UserProfile = () => {
 
   const handleSaveProfile = async () => {
     try {
-      await axios.put("http://localhost:8090/user/profile", editedUser);
+      await axios.put(
+        "http://localhost:8090/user/profile",
+        editedUser,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      );
       setIsEditing(false);
       fetchUserProfile();
     } catch (error) {
@@ -45,11 +62,17 @@ const UserProfile = () => {
       setError("Failed to update user profile");
     }
   };
+  
 
-  const handleDeleteProfile = async () => {
+  const handleDeleteProfile = async () => { 
     try {
-      await axios.delete("http://localhost:8090/user/profile");
+      await axios.delete("http://localhost:8090/user/profile", {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
       setUser(null);
+      window.location = "/"
     } catch (error) {
       console.error(error);
       setError("Failed to delete user profile");
@@ -80,7 +103,7 @@ const UserProfile = () => {
   return (
     <div className="profile-container">
       <h1 className="title">My Profile</h1>
-      {error && <p className="error">{error}</p>}
+   {error && <p className="error">{error}</p>} 
       {user && (
         <div className="user-details">
           <div className="container" id="cfcf">

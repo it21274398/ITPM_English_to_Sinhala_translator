@@ -4,10 +4,6 @@ import jwt from "jsonwebtoken";
 
 const SECRET_KEY = "RECIPEAPI";
 
-// Define the dummy token
-const dummyToken =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNhbmRhcnVuYXdvZGEyMDAxQGdtYWlsLmNvbSIsImlkIjoiNjYzZjAwMGM3MjM2NTQ5YzE5MWFmNDJlIiwiaWF0IjoxNzE1NDA4OTg0LCJleHAiOjE3MTU0MTI1ODR9.KQ2QLobbtYi88CQwHRQvcAKjxkWsvBGTWREKWipF_DU";
-
 
 const signup = async (req, res) => {
   const { firstName, lastName, contact, email, password } = req.body;
@@ -69,7 +65,10 @@ const signin = async (req, res) => {
 
 const getUserProfile = async (req, res) => {
   try {
-    const decodedToken = jwt.verify(dummyToken, SECRET_KEY);
+    const header = req.headers["authorization"];
+    const token = header && header.split(" ")[1];
+
+    const decodedToken = jwt.verify(token, SECRET_KEY);
     const userId = decodedToken.id;
 
     const user = await User.findById(userId);
@@ -86,7 +85,9 @@ const getUserProfile = async (req, res) => {
 
 const updateUserProfile = async (req, res) => {
   try {
-    const decodedToken = jwt.verify(dummyToken, SECRET_KEY);
+    const header = req.headers["authorization"];
+    const token = header && header.split(" ")[1];
+    const decodedToken = jwt.verify(token, SECRET_KEY);
     const userId = decodedToken.id;
 
     const { firstName, lastName, contact } = req.body;
@@ -104,7 +105,9 @@ const updateUserProfile = async (req, res) => {
 
 const deleteUserProfile = async (req, res) => {
   try {
-    const decodedToken = jwt.verify(dummyToken, SECRET_KEY);
+    const header = req.headers["authorization"];
+    const token = header && header.split(" ")[1];
+    const decodedToken = jwt.verify(token, SECRET_KEY);
     const userId = decodedToken.id;
 
     await User.findByIdAndDelete(userId);
@@ -114,5 +117,7 @@ const deleteUserProfile = async (req, res) => {
     res.status(500).json({ message: "Server Error" });
   }
 };
+
+
 
 export { signup, signin, getUserProfile, updateUserProfile, deleteUserProfile };

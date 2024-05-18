@@ -6,6 +6,12 @@ import logo from "../Images/logo1.png";
 import "../styles/Header.css";
 //----------------------------------------------------------
 export default function Layout() {
+
+  const  handleLogout=()=>{
+      localStorage.removeItem("authToken");
+      localStorage.removeItem("userData");
+      window.location = "/"
+  }
   return (
     <div className="header">
       <header>
@@ -33,10 +39,10 @@ export default function Layout() {
               <IonIcon icon={personOutline} className="headericons" />
               <span className="profile-span">My Profile</span>
             </Link>
-            <Link to="/" className="Links2">
-              <IonIcon icon={logOutOutline} className="headericons" />
+            <button onClick={handleLogout} className="Links2">
+              <IonIcon icon={logOutOutline}  className="headericons" />
               <span className="logout-span">Logout</span>
-            </Link>{" "}
+            </button>{" "}
           </nav>
         </div>
       </header>
